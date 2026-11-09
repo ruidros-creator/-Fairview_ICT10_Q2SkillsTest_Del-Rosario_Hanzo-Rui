@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Non-Metal Elements | Periodic Table Information Finder</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- PyScript: runs Python in the browser, so it works on GitHub Pages -->
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background: #eef1f5;
+      color: #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 12px;
+    }
+    .app-card {
+      max-width: 620px;
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #d5dae1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .app-header {
+      background: #1e3a5f;
+      color: #ffffff;
+      padding: 22px 24px;
+    }
+    .app-header h1 { font-size: 1.5rem; font-weight: 600; margin: 0; }
+    .app-header p { margin: 2px 0 0; font-size: .9rem; color: #c3d0e0; }
+
+    .instructions {
+      background: #f3f6fa;
+      border: 1px solid #d5dae1;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: .9rem;
+      color: #374151;
+    }
+
+    .form-label { font-weight: 600; font-size: .9rem; }
+    .btn-search {
+      background: #1e3a5f;
+      border-color: #1e3a5f;
+      color: #ffffff;
+      font-weight: 500;
+    }
+    .btn-search:hover { background: #16304f; border-color: #16304f; color: #ffffff; }
+    .btn-search:disabled { background: #6b7a8f; border-color: #6b7a8f; color: #ffffff; }
+
+    .result-title { font-weight: 600; font-size: 1rem; margin-bottom: 8px; }
+    .result-box {
+      border: 1px solid #d5dae1;
+      border-left: 4px solid #1e3a5f;
+      border-radius: 6px;
+      padding: 12px 16px;
+      background: #fafbfc;
+      color: #6b7280;
+      font-size: .95rem;
+    }
+    .result-box.found { color: #1f2937; line-height: 1.7; }
+    .result-box.not-found { border-left-color: #b42318; color: #b42318; }
+
+    .app-footer {
+      border-top: 1px solid #d5dae1;
+      background: #f3f6fa;
+      text-align: center;
+      font-size: .8rem;
+      color: #6b7280;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-card">
+    <div class="app-header">
+      <h1>Non-Metal Elements</h1>
+      <p>Periodic Table Information Finder</p>
+    </div>
+
+    <div class="p-4">
+      <div class="instructions mb-3">
+        <strong>Instructions:</strong>
+        Enter the symbol of a non-metal element (Example: H, O, Cl, Ne, Xe).
+      </div>
+
+      <label for="Element1" class="form-label">
+        <i class="bi bi-search"></i> Element Symbol
+      </label>
+      <input type="text" id="Element1" class="form-control form-control-lg mb-3"
+             placeholder="Enter symbol" maxlength="3" autocomplete="off"
+             onkeydown="if(event.key==='Enter'){document.getElementById('checkBtn').click();}">
+
+      <button type="button" id="checkBtn" class="btn btn-search btn-lg w-100"
+              py-click="check_details" disabled>Loading...</button>
+
+      <hr class="my-4">
+
+      <div class="result-title"><i class="bi bi-list-ul"></i> Result</div>
+      <div id="result" class="result-box">Your result will appear here.</div>
+    </div>
+
+    <div class="app-footer">Skills Test &bull; 2nd Quarter &bull; Undercovered</div>
+  </div>
+
+  <!-- Python code -->
+  <script type="py">
+
+  </script>
+
+</body>
+</html>
